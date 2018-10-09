@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2c2pTest", "App2c2pTest\App2c2pTest.csproj", "{2923FF67-82F0-459A-A556-E8C8F0D10604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App2c2pTest", "App2c2pTest\App2c2pTest.csproj", "{2923FF67-82F0-459A-A556-E8C8F0D10604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2c2pTest.Data", "App2c2pTest.Data\App2c2pTest.Data.csproj", "{5CD4E1EE-DD73-4C59-AE25-339859D4F5A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App2c2pTest.Data", "App2c2pTest.Data\App2c2pTest.Data.csproj", "{5CD4E1EE-DD73-4C59-AE25-339859D4F5A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2c2pTest.Repository", "Repository\App2c2pTest.Repository.csproj", "{25AA6221-5ECE-4A3F-8847-8EE378DD6F69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App2c2pTest.Repository", "Repository\App2c2pTest.Repository.csproj", "{25AA6221-5ECE-4A3F-8847-8EE378DD6F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2C2PTest.Tests", "App2C2PTest.Tests\App2C2PTest.Tests.csproj", "{7ABA2EDE-D036-416A-B5D1-88366D464E8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{25AA6221-5ECE-4A3F-8847-8EE378DD6F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25AA6221-5ECE-4A3F-8847-8EE378DD6F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25AA6221-5ECE-4A3F-8847-8EE378DD6F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ABA2EDE-D036-416A-B5D1-88366D464E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABA2EDE-D036-416A-B5D1-88366D464E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABA2EDE-D036-416A-B5D1-88366D464E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABA2EDE-D036-416A-B5D1-88366D464E8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

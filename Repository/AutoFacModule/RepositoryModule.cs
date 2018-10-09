@@ -1,10 +1,9 @@
 ﻿using App2c2pTest.Data;
-using App2c2pTest.Repository;
 using App2c2pTest.Repository.Interface;
 using Autofac;
 using NACC.Repository.Interface;
 
-namespace NACC.Repository.AutoFacModule
+namespace App2c2pTest.Repository.AutoFacModule
 {
     public class RepositoryModule:Module
     {

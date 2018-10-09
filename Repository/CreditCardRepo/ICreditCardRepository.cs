@@ -7,6 +7,6 @@ namespace App2c2pTest.Repository.CreditCardRepo
 {
     public interface ICreditCardRepository:IAutoDependencyRegister
     {
-        Task<List<CreditCard>> GetCard(string card);
+        List<CreditCard> GetCard(string card);
     }
 }

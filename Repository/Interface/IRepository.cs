@@ -16,7 +16,8 @@ namespace App2c2pTest.Repository.Interface
     
     public interface IRepository<TEntity> where TEntity : class, IEntity
     {
-        Task<List<TEntity>> ExecuteTSQL(string sql);
+        Task<List<TEntity>> ExecuteTSQLAsync(string sql);
+        List<TEntity> ExecuteTSQL(string sql);
 
     }
 }

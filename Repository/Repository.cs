@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using App2c2pTest.Data;
 using App2c2pTest.Data.Interface;
@@ -28,9 +29,14 @@ namespace App2c2pTest.Repository
         public virtual DbSet<TEntity> Table => _dbContextProvider.Set<TEntity>();
 
 
-        public async Task<List<TEntity>> ExecuteTSQL(string sql)
+        public async Task<List<TEntity>> ExecuteTSQLAsync(string sql)
         {
-            return await Table.FromSql(sql).ToListAsync();
+           return await Table.FromSql(sql).ToListAsync();
+        }
+
+        public  List<TEntity> ExecuteTSQL(string sql)
+        {
+            return  Table.FromSql(sql).ToList(); ;
         }
     }
 }

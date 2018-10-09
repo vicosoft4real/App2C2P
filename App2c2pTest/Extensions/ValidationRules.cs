@@ -100,6 +100,20 @@ namespace App2c2pTest.Extensions
 
             return true;
         }
+        /// <summary>
+        /// Convert to number
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+
+        public static int ToNumber(this string year)
+        {
+            if (int.TryParse(year, out var n))
+            {
+                return n;
+            }
+            return 0;
+        }
 
     }
 }

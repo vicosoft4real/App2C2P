@@ -15,9 +15,9 @@ namespace App2c2pTest.Repository.CreditCardRepo
             _creditCardRepository = creditCardRepository;
         }
 
-        public async Task<List<CreditCard>> GetCard(string card)
+        public  List<CreditCard> GetCard(string card)
         {
-            return await _creditCardRepository.ExecuteTSQL($"GetCard {card} ");
+            return  _creditCardRepository.ExecuteTSQL($"GetCard {card} ");
            
         } 
     }
