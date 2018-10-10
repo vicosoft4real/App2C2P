@@ -12,7 +12,7 @@ namespace App2c2pTest.Controllers
     public class CreadiCardController : ControllerBase
     {
         private readonly ICreditCardRepository _cardRepository;
-
+       
         public CreadiCardController(ICreditCardRepository cardRepository)
         {
             _cardRepository = cardRepository;
@@ -23,35 +23,49 @@ namespace App2c2pTest.Controllers
      /// </summary>
      /// <param name="card"></param>
      /// <returns></returns>
-        [HttpGet("validate")]
+        [HttpPost("validate")]
         [ProducesResponseType(typeof(CardResponse), 200)]
-        public async Task<ActionResult<CardResponse>> GetCard(CreditCardsVm card)
+        [ProducesResponseType(typeof(CardResponse), 200)]
+        public async Task<ActionResult<CardResponse>> GetCard([FromBody]CreditCardsVm card)
         {
             if (ModelState.IsValid)
             {
-                var sqlCardResult = await Task.FromResult(_cardRepository.GetCard(card.Card).FirstOrDefault());
-                var year = card.ExpiryDate.ToString().Substring(1,5).ToNumber();
+                var year = card.ExpiryDate.Substring(2, 4).ToNumber();
+                
+                var sqlCardResult = await _cardRepository.GetCard(card.Card);
+               
 
-                if (sqlCardResult != null)
+                if (sqlCardResult.Any())
                 {
-                    var processingCard = sqlCardResult.Card;
 
-                    if (processingCard.IsValidVisaCard() && year.IsExpiryDateLeadYear())
+                    var processingResult = sqlCardResult.FirstOrDefault();
+                    if (processingResult != null)
                     {
-                        return Ok(new CardResponse {CardType = "Visa", Result = "Valid"});
-                    }
-                    if (processingCard.IsValidMasterCard() && year.IsPrime())
-                    {
-                        return Ok(new CardResponse {CardType = "Master", Result = "Valid"});
+                       var  processingCard = processingResult.Card;
+                        if (processingCard.IsValidVisaCard())
+                        {
+                            var response = new CardResponse {CardType = "Visa"};
+                           
+                            return Ok(response.ValidateVisaYear(year));
+                        }
+                        if (processingCard.IsValidMasterCard())
+                        {
+                            var response = new CardResponse {CardType = "Master"};
 
-                    }
-                    if (processingCard.IsValidAmexCard() && processingCard.IsCard15Digita())
-                    {
-                        return Ok(new CardResponse {CardType = "Amex", Result = "Valid"});
-                    }
-                    if (processingCard.IsValidJCBCard())
-                    {
-                        return Ok(new CardResponse {CardType = "JCB", Result = "Valid"});
+                            return Ok(response.ValidateIsMaterYearPrimeNumber(year));
+
+                        }
+                        if (processingCard.IsValidAmexCard())
+                        {
+                            var response = new CardResponse {CardType = "Amex"};
+                            
+
+                            return Ok(response.ValidateIsAmexCard15Digit(processingCard));
+                        }
+                        if (processingCard.IsValidJCBCard())
+                        {
+                            return Ok(new CardResponse {CardType = "JCB", Result = "Valid"});
+                        }
                     }
                 }
                 else

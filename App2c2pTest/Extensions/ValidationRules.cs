@@ -1,4 +1,5 @@
 ﻿using System;
+using App2c2pTest.Model;
 
 namespace App2c2pTest.Extensions
 {
@@ -16,7 +17,8 @@ namespace App2c2pTest.Extensions
         public static bool IsValidVisaCard(this string card)
         {
             var inputCard = card.Split('-');
-            return inputCard[0].Length==4;
+            var firstDigits = inputCard[0];
+            return firstDigits.Substring(0,1).Equals("4");
         }
         /// <summary>
         /// check whether  the input string is Master Visa Card
@@ -26,7 +28,8 @@ namespace App2c2pTest.Extensions
         public static bool IsValidMasterCard(this string card)
         {
             var inputCard = card.Split('-');
-            return inputCard[0].Length == 5;
+            var firstDigits = inputCard[0];
+            return firstDigits.Substring(0, 1).Equals("5");
         }
         /// <summary>
         /// check whether  the input string is valid Amex Card
@@ -65,9 +68,9 @@ namespace App2c2pTest.Extensions
         public static bool IsCard15Digita(this string card)
         {
             var inputCard = card.Split('-');
-            if (inputCard.Length == 3)
+            if (inputCard.Length == 4)
             {
-                return inputCard[3].Length == 3;
+                return string.Join("",inputCard).Length == 15;
             }
             return false;
         }
@@ -114,6 +117,66 @@ namespace App2c2pTest.Extensions
             }
             return 0;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static CardResponse ValidateVisaYear(this CardResponse response, int year)
+        {
+            if (year.IsExpiryDateLeadYear())
+            {
+                response.Result = "Valid";
+            }
+            else
+            {
+                response.Result = "InValid";
+            }
+            return response;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static CardResponse ValidateIsMaterYearPrimeNumber(this CardResponse response, int year)
+        {
+            if (year.IsPrime())
+            {
+                response.Result = "Valid";
+            }
+            else
+            {
+                response.Result = "InValid";
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="response"></param>
+   
+        /// <param name="processingCard"></param>
+        /// <returns></returns>
+        public static CardResponse ValidateIsAmexCard15Digit(this CardResponse response, string processingCard)
+        {
+            if (processingCard.IsCard15Digita())
+            {
+                response.Result = "Valid";
+            }
+            else
+            {
+                response.Result = "InValid";
+            }
+            return response;
+        }
+
 
     }
 }

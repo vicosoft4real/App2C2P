@@ -4,14 +4,16 @@ using App2c2pTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace App2c2pTest.Data.Migrations
 {
     [DbContext(typeof(App2c2pContext))]
-    partial class App2c2pContextModelSnapshot : ModelSnapshot
+    [Migration("20181010083644_Card_length_updated")]
+    partial class Card_length_updated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,14 +45,6 @@ namespace App2c2pTest.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CreditCards");
-
-                    b.HasData(
-                        new { Id = 1, Card = "4909-2832-8723-8888", CardDescription = "Visa Card Sample", DateCreated = new DateTime(2018, 10, 10, 19, 28, 2, 930, DateTimeKind.Local), ExpiryDate = 81980, IsActive = true, IsDeleted = false },
-                        new { Id = 2, Card = "5909-2222-8723-8888", CardDescription = "Master Card Sample", DateCreated = new DateTime(2018, 10, 10, 19, 28, 2, 931, DateTimeKind.Local), ExpiryDate = 81933, IsActive = true, IsDeleted = false },
-                        new { Id = 3, Card = "3409-2222-8723-888", CardDescription = "Amex Card Sample", DateCreated = new DateTime(2018, 10, 10, 19, 28, 2, 931, DateTimeKind.Local), ExpiryDate = 81973, IsActive = true, IsDeleted = false },
-                        new { Id = 4, Card = "3528-3589-8723-8888", CardDescription = "JCB Card Sample", DateCreated = new DateTime(2018, 10, 10, 19, 28, 2, 931, DateTimeKind.Local), ExpiryDate = 81963, IsActive = true, IsDeleted = false },
-                        new { Id = 5, Card = "3709-2222-8723-8888", CardDescription = "Amex Card Sample", DateCreated = new DateTime(2018, 10, 10, 19, 28, 2, 931, DateTimeKind.Local), ExpiryDate = 81963, IsActive = true, IsDeleted = false }
-                    );
                 });
 #pragma warning restore 612, 618
         }

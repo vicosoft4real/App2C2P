@@ -1,23 +1,26 @@
 ﻿
 using System.Collections.Generic;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
+using App2c2pTest.Data;
 using App2c2pTest.Data.Entites;
-using App2c2pTest.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace App2c2pTest.Repository.CreditCardRepo
 {
     public class CreditCardRepository : ICreditCardRepository
     {
-        public readonly IRepository<CreditCard> _creditCardRepository;
-        public CreditCardRepository(IRepository<CreditCard> creditCardRepository)
+        public readonly App2c2pContext _creditCardRepository;
+
+        public CreditCardRepository(App2c2pContext creditCardRepository)
         {
             _creditCardRepository = creditCardRepository;
         }
 
-        public  List<CreditCard> GetCard(string card)
+        public  async Task<List<CreditCard>> GetCard(string card)
         {
-            return  _creditCardRepository.ExecuteTSQL($"GetCard {card} ");
+            var param = new SqlParameter("@card", card);
+            return  await _creditCardRepository.CreditCards.FromSql($"GetCard @card", param).ToListAsync();
            
         } 
     }

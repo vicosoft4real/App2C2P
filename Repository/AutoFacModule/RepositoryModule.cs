@@ -11,7 +11,7 @@ namespace App2c2pTest.Repository.AutoFacModule
         {
 
 
-            builder.RegisterType<App2c2pContext>().InstancePerLifetimeScope();
+           // builder.RegisterType<App2c2pContext>().InstancePerLifetimeScope();
            
 
             builder.RegisterGeneric(typeof(Repository<>))

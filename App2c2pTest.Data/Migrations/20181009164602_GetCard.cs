@@ -7,14 +7,14 @@ namespace App2c2pTest.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             string sp = @"CREATE PROCEDURE GetCard
-	                            @card nvarchar(16)
+	                            @card nvarchar(19)
                     AS
                     BEGIN
 	                -- SET NOCOUNT ON added to prevent extra result sets from
 	                -- interfering with SELECT statements.
 	                SET NOCOUNT ON;
                     -- select statements for card
-	                SELECT TOP(1) * FROM Cards WHERE Card=@card
+	                SELECT TOP(1) * FROM CreditCards WHERE Card=@card
                     END
                     GO";
             migrationBuilder.Sql(sp);

@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App2c2pTest.Data\App2c2pTest.Data.csproj" />
+    <PackageReference Include="Autofac" Version="4.8.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.8.1" />
+    <ProjectReference Include="..\App2c2pTest.Data\App2c2pTest.Data.csproj" />
   </ItemGroup>
 
 </Project>

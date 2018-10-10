@@ -1,0 +1,477 @@
+2018-10-10 10:07:56,066 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 10:07:56,066 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 10:07:56,163 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 90.5144ms 200 
+2018-10-10 10:07:56,504 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 382.9008ms 404 
+2018-10-10 10:08:04,867 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 10:08:05,179 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:08:28,258 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:08:43,472 [8] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.4-rtm-31024 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=App2c2pTest.Data 
+2018-10-10 10:08:44,469 [8] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+GetCard 4892-9023-9382-1010
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:d1f1a738-3147-49f0-a3d6-65288c13a607
+Error Number:102,State:1,Class:15
+2018-10-10 10:08:44,544 [8] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred in the database while iterating the results of a query for context type 'App2c2pTest.Data.App2c2pContext'.
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:d1f1a738-3147-49f0-a3d6-65288c13a607
+Error Number:102,State:1,Class:15
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:d1f1a738-3147-49f0-a3d6-65288c13a607
+Error Number:102,State:1,Class:15
+2018-10-10 10:09:58,949 [8] ERROR App2c2pTest.Filters.ApiExceptionFilter - Incorrect syntax near '-'.
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at App2c2pTest.Repository.Repository`1.ExecuteTSQL(String sql) in C:\Users\vogundowo\Source\Repos\App2C2P\Repository\Repository.cs:line 39
+   at App2c2pTest.Repository.CreditCardRepo.CreditCardRepository.GetCard(String card) in C:\Users\vogundowo\Source\Repos\App2C2P\Repository\CreditCardRepo\CreditCardRepository.cs:line 21
+   at App2c2pTest.Controllers.CreadiCardController.GetCard(CreditCardsVm card) in C:\Users\vogundowo\Source\Repos\App2C2P\App2c2pTest\Controllers\CreadiCardController.cs:line 33
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+ClientConnectionId:d1f1a738-3147-49f0-a3d6-65288c13a607
+Error Number:102,State:1,Class:15
+2018-10-10 10:10:06,173 [8] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 10:10:06,292 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 121031.7307ms
+2018-10-10 10:10:06,480 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 121529.2248ms 400 application/json; charset=utf-8
+2018-10-10 10:12:33,313 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 10:12:33,313 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 10:12:33,466 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 149.8401ms 200 
+2018-10-10 10:12:34,473 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1057.2616ms 404 
+2018-10-10 10:12:36,027 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 10:12:36,147 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:12:42,609 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:12:44,767 [9] ERROR App2c2pTest.Filters.ApiExceptionFilter - Index and length must refer to a location within the string.
+Parameter name: length
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at App2c2pTest.Controllers.CreadiCardController.GetCard(CreditCardsVm card) in C:\Users\vogundowo\Source\Repos\App2C2P\App2c2pTest\Controllers\CreadiCardController.cs:line 32
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+2018-10-10 10:12:52,925 [9] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 10:12:53,012 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 16822.5884ms
+2018-10-10 10:12:53,160 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17022.079ms 400 application/json; charset=utf-8
+2018-10-10 10:13:08,204 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 57
+2018-10-10 10:13:08,283 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:13:30,251 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:14:51,349 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 10:14:51,349 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 10:14:51,349 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 57
+2018-10-10 10:14:51,501 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 143.2424ms 200 
+2018-10-10 10:14:51,805 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 425.4961ms 404 
+2018-10-10 10:14:51,935 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:14:55,678 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:15:36,124 [11] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.4-rtm-31024 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=App2c2pTest.Data 
+2018-10-10 10:15:37,275 [11] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (133ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+dbo.GetCard 4892902393821010
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cards'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:c6e82ed2-e30c-48c2-958b-b2f3e9ed5b51
+Error Number:208,State:1,Class:16
+2018-10-10 10:15:37,367 [11] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred in the database while iterating the results of a query for context type 'App2c2pTest.Data.App2c2pContext'.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cards'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:c6e82ed2-e30c-48c2-958b-b2f3e9ed5b51
+Error Number:208,State:1,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Cards'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:c6e82ed2-e30c-48c2-958b-b2f3e9ed5b51
+Error Number:208,State:1,Class:16
+2018-10-10 10:29:58,222 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 10:29:58,222 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 10:29:58,403 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 168.1719ms 200 
+2018-10-10 10:29:58,638 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 429.721ms 404 
+2018-10-10 10:30:14,847 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 10:30:15,188 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:30:21,909 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:31:11,987 [9] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.4-rtm-31024 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=App2c2pTest.Data 
+2018-10-10 10:31:14,147 [9] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (310ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+dbo.GetCard 4892-9023-9382-1010
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:f0375b01-e70f-4195-ba09-826919d02ebc
+Error Number:102,State:1,Class:15
+2018-10-10 10:31:14,445 [9] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred in the database while iterating the results of a query for context type 'App2c2pTest.Data.App2c2pContext'.
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:f0375b01-e70f-4195-ba09-826919d02ebc
+Error Number:102,State:1,Class:15
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:f0375b01-e70f-4195-ba09-826919d02ebc
+Error Number:102,State:1,Class:15
+2018-10-10 10:31:18,899 [9] ERROR App2c2pTest.Filters.ApiExceptionFilter - Incorrect syntax near '-'.
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '-'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at App2c2pTest.Repository.Repository`1.ExecuteTSQL(String sql) in C:\Users\vogundowo\Source\Repos\App2C2P\Repository\Repository.cs:line 39
+   at App2c2pTest.Repository.CreditCardRepo.CreditCardRepository.GetCard(String card) in C:\Users\vogundowo\Source\Repos\App2C2P\Repository\CreditCardRepo\CreditCardRepository.cs:line 21
+   at App2c2pTest.Controllers.CreadiCardController.GetCard(CreditCardsVm card) in C:\Users\vogundowo\Source\Repos\App2C2P\App2c2pTest\Controllers\CreadiCardController.cs:line 33
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+ClientConnectionId:f0375b01-e70f-4195-ba09-826919d02ebc
+Error Number:102,State:1,Class:15
+2018-10-10 10:31:46,753 [9] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 10:31:46,861 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 91629.1505ms
+2018-10-10 10:31:47,388 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 92222.3115ms 400 application/json; charset=utf-8
+2018-10-10 10:41:31,813 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 10:41:31,814 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 10:41:31,990 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 171.7836ms 200 
+2018-10-10 10:41:32,433 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 643.0413ms 404 
+2018-10-10 10:41:36,416 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 10:41:36,834 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:41:46,545 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:42:24,889 [9] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.4-rtm-31024 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=App2c2pTest.Data 
+2018-10-10 10:42:25,678 [9] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+dbo.GetCard 4892902393821010
+2018-10-10 10:42:44,823 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 58235.874ms.
+2018-10-10 10:42:45,273 [9] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 10:42:45,727 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 68752.2197ms
+2018-10-10 10:42:45,929 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 69513.3589ms 200 application/json; charset=utf-8
+2018-10-10 10:43:30,660 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 10:43:30,747 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:43:36,230 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:44:02,828 [8] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.4-rtm-31024 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=App2c2pTest.Data 
+2018-10-10 10:44:03,242 [8] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (304ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+dbo.GetCard 4909283287238888
+2018-10-10 10:49:53,461 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 10:49:53,461 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 10:49:53,821 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 389.1703ms 200 
+2018-10-10 10:49:54,367 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 970.0267ms 404 
+2018-10-10 10:50:00,187 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 10:50:00,448 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 10:50:05,823 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 10:50:32,216 [9] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.4-rtm-31024 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=App2c2pTest.Data 
+2018-10-10 10:50:33,953 [9] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (184ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+dbo.GetCard 4909283287238888
+2018-10-10 10:51:47,809 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 101846.4516ms.
+2018-10-10 10:51:47,964 [9] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 10:51:48,273 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 107625.9462ms
+2018-10-10 10:51:48,347 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 108123.3005ms 200 application/json; charset=utf-8
+2018-10-10 15:28:26,746 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 15:28:26,746 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 15:28:26,946 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 134.1511ms 200 
+2018-10-10 15:28:27,223 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 472.2139ms 404 
+2018-10-10 15:28:34,581 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 15:28:34,870 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 15:28:35,414 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 15:28:44,726 [9] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.3-rtm-32065 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-10 15:28:45,255 [9] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (90ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+dbo.GetCard @p0
+2018-10-10 15:28:55,662 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 20203.0423ms.
+2018-10-10 15:28:55,812 [9] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 15:28:56,010 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 21018.9898ms
+2018-10-10 15:28:56,149 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21498.4163ms 200 application/json; charset=utf-8
+2018-10-10 18:08:06,263 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 18:08:06,264 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 18:08:06,548 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 263.0577ms 200 
+2018-10-10 18:08:07,449 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1056.1802ms 404 
+2018-10-10 18:08:09,801 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 18:08:09,989 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 18:08:11,389 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 18:08:19,400 [9] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.3-rtm-32065 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-10 18:08:20,280 [8] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (111ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+GetCard '@p0'
+2018-10-10 18:12:57,294 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 18:12:57,294 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 18:12:57,692 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 289.574ms 200 
+2018-10-10 18:12:58,408 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1026.2547ms 404 
+2018-10-10 18:13:01,633 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 18:13:01,821 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 18:13:02,463 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 18:13:52,241 [8] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.3-rtm-32065 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-10 18:14:02,395 [8] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (287ms) [Parameters=[@card='?' (Size = 19)], CommandType='Text', CommandTimeout='30']
+GetCard
+System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'GetCard' expects parameter '@card', which was not supplied.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:3e4c3432-1efe-4836-a001-27677a6e1206
+Error Number:201,State:4,Class:16
+2018-10-10 18:14:02,466 [8] ERROR Microsoft.EntityFrameworkCore.Query - An exception occurred in the database while iterating the results of a query for context type 'App2c2pTest.Data.App2c2pContext'.
+System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'GetCard' expects parameter '@card', which was not supplied.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:3e4c3432-1efe-4836-a001-27677a6e1206
+Error Number:201,State:4,Class:16
+System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'GetCard' expects parameter '@card', which was not supplied.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:3e4c3432-1efe-4836-a001-27677a6e1206
+Error Number:201,State:4,Class:16
+2018-10-10 18:16:54,471 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 18:16:54,471 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 18:16:54,705 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 220.6654ms 200 
+2018-10-10 18:16:55,547 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 959.4127ms 404 
+2018-10-10 18:17:01,091 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:44395/api/CreadiCard/validate application/json 60
+2018-10-10 18:17:01,308 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetCard", controller = "CreadiCard"}. Executing action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest)
+2018-10-10 18:17:02,016 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) with arguments (App2c2pTest.Model.CreditCardsVm) - Validation state: Valid
+2018-10-10 18:17:26,722 [9] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.1.3-rtm-32065 initialized 'App2c2pContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-10-10 18:17:28,387 [8] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (261ms) [Parameters=[@card='?' (Size = 19)], CommandType='Text', CommandTimeout='30']
+GetCard @card
+2018-10-10 18:18:00,255 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 58126.3581ms.
+2018-10-10 18:18:00,611 [8] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'App2c2pTest.Model.CardResponse'.
+2018-10-10 18:18:01,110 [8] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action App2c2pTest.Controllers.CreadiCardController.GetCard (App2c2pTest) in 59679.4359ms
+2018-10-10 18:18:01,231 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 60073.4484ms 200 application/json; charset=utf-8
+2018-10-10 19:02:06,869 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 19:02:06,869 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 19:02:07,391 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 508.0656ms 200 
+2018-10-10 19:02:08,853 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1658.4821ms 404 
+2018-10-10 19:02:33,576 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api-docs/v1/swagger.json  
+2018-10-10 19:02:33,686 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 87.1485ms 404 
+2018-10-10 19:08:32,297 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 19:08:32,297 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 19:08:32,487 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 183.2001ms 200 
+2018-10-10 19:08:33,025 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 713.357ms 404 
+2018-10-10 19:08:50,459 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api-docs/v1/swagger.json  
+2018-10-10 19:08:50,662 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 125.5273ms 404 
+2018-10-10 19:08:59,681 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api-docs/v1/swagger.json  
+2018-10-10 19:08:59,727 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.9728ms 404 
+2018-10-10 19:12:05,836 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/api/values  
+2018-10-10 19:12:05,836 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:34527/  0
+2018-10-10 19:12:06,258 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 416.3289ms 200 
+2018-10-10 19:12:06,859 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 943.3894ms 404 
+2018-10-10 19:12:10,253 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger  
+2018-10-10 19:12:10,331 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24.3637ms 301 
+2018-10-10 19:12:10,715 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/index.html  
+2018-10-10 19:12:10,808 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 272.9812ms 200 text/html
+2018-10-10 19:12:11,303 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/swagger-ui.css  
+2018-10-10 19:12:11,326 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/swagger-ui-bundle.js  
+2018-10-10 19:12:11,335 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/swagger-ui-standalone-preset.js  
+2018-10-10 19:12:11,953 [13] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2018-10-10 19:12:12,038 [8] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2018-10-10 19:12:12,155 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1082.1352ms 200 text/css
+2018-10-10 19:12:12,169 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 753.2716ms 200 application/javascript
+2018-10-10 19:12:12,418 [13] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2018-10-10 19:12:12,452 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1401.713ms 200 application/javascript
+2018-10-10 19:12:14,448 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/v1/swagger.json  
+2018-10-10 19:12:14,790 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/favicon-32x32.png  
+2018-10-10 19:12:15,054 [8] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2018-10-10 19:12:15,140 [8] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 386.5896ms 200 image/png
+2018-10-10 19:12:15,164 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:44395/swagger/favicon-16x16.png  
+2018-10-10 19:12:15,219 [13] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2018-10-10 19:12:15,242 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 107.8171ms 200 image/png
+2018-10-10 19:12:15,404 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 935.5824ms 200 application/json;charset=utf-8

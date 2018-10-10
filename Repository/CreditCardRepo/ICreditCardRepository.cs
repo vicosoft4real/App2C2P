@@ -5,8 +5,8 @@ using NACC.Repository.Interface;
 
 namespace App2c2pTest.Repository.CreditCardRepo
 {
-    public interface ICreditCardRepository:IAutoDependencyRegister
+    public interface ICreditCardRepository: IAutoDependencyRegister
     {
-        List<CreditCard> GetCard(string card);
+        Task<List<CreditCard>> GetCard(string card);
     }
 }

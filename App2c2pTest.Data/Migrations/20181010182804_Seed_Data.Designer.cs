@@ -4,14 +4,16 @@ using App2c2pTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace App2c2pTest.Data.Migrations
 {
     [DbContext(typeof(App2c2pContext))]
-    partial class App2c2pContextModelSnapshot : ModelSnapshot
+    [Migration("20181010182804_Seed_Data")]
+    partial class Seed_Data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
