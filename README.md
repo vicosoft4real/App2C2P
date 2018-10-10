@@ -5,4 +5,4 @@ This App Validate Card Based on Set rules
 2. Open Appsetting.json and change your connection string.
 3. Open the package manger console and run command Update-Database against App2c2pTest.Data
 
-Alternatively. App2c2p.sql in SQL Server 2012 and above and configure the DB in the solution
+Alternatively.  open App2c2p.sql in SQL Server 2012 and above and then configure the DB in the solution
