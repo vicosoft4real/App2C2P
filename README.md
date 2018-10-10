@@ -2,7 +2,7 @@
 This App Validate Card Based on Set rules
 # Instruction on how to run the application
 1. Open  the solution in visual studio 2017
-2. Change your connection string Appsetting.json and App2c2pContextFactory.cs.
+2. Change your connection string in Appsetting.json and App2c2pContextFactory.cs.
 3. Make sure the startup project is App2c2pTest
 4. Open the package manger console and run command Update-Database against App2c2pTest.Data
 
