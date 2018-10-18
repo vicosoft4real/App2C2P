@@ -29,7 +29,7 @@ namespace App2c2pTest.Controllers
         [ProducesResponseType(typeof(CardResponse), 200)]
         public async Task<ActionResult<CardResponse>> GetCard([FromBody]CreditCardsVm card)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && !string.IsNullOrEmpty(card.ExpiryDate)  &&  card.ExpiryDate.Length == 6)
             {
                 var year = card.ExpiryDate.ToString().Substring(2, 4).ToNumber();
                 
@@ -45,10 +45,14 @@ namespace App2c2pTest.Controllers
                        var  processingCard = processingResult.Card;
                         return Validate(processingCard,year);                    }
                 }
+                else
+                {
+                   return BadRequest(card.Card.SetCard("Unknown").SetResult("Does Not Exist"));
+                }
                 
               
             }
-            return BadRequest(card.Card.SetCard("Unknown").SetResult("Does Not Exist"));
+            return BadRequest(card.Card.SetCard("Unknown").SetResult("Invalid"));
         }
 
         /// <summary>

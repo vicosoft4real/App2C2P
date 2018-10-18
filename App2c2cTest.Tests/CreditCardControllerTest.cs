@@ -48,7 +48,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "4909-2832-8723-8888",
-                ExpiryDate = 081980
+                ExpiryDate = "081980"
             };
 
 
@@ -61,7 +61,6 @@ namespace App2c2cTest.Tests
 
             // Assert
             Assert.NotNull(result);
-            Assert.NotNull(value);
             Assert.NotNull(cardResponse);
             Assert.AreEqual("Visa", cardResponse.CardType);
             Assert.AreEqual("Valid", cardResponse.Result);
@@ -75,7 +74,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "4909-2832-8723-8888",
-                ExpiryDate = 081981
+                ExpiryDate = "081981"
             };
 
 
@@ -101,7 +100,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "5909-2222-8723-8888",
-                ExpiryDate = 081913
+                ExpiryDate = "081913"
             };
 
 
@@ -126,7 +125,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "5909-2222-8723-8888",
-                ExpiryDate = 082020
+                ExpiryDate = "082020"
             };
 
 
@@ -151,7 +150,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "3409-2222-8723-888",
-                ExpiryDate = 081913
+                ExpiryDate = "081913"
             };
 
 
@@ -162,7 +161,6 @@ namespace App2c2cTest.Tests
             var cardResponse = value.Value as CardResponse;
 
             // Assert
-            Assert.NotNull(result);
             Assert.NotNull(result);
             Assert.NotNull(cardResponse);
             Assert.AreEqual("Amex", cardResponse.CardType);
@@ -175,7 +173,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "3709-2222-8723-8888",
-                ExpiryDate = 081913
+                ExpiryDate = "081913"
             };
 
 
@@ -200,7 +198,7 @@ namespace App2c2cTest.Tests
             var creditCards = new CreditCardsVm
             {
                 Card = "3528-3589-8723-8888",
-                ExpiryDate = 081913
+                ExpiryDate = "081913"
             };
 
 
@@ -217,13 +215,13 @@ namespace App2c2cTest.Tests
             Assert.AreEqual("Valid", cardResponse.Result);
         }
         [Test]
-        public async Task Post_Unknown__Card()
+        public async Task Post_Unknown_DoesNot_Exist__Card()
         {
             // Arrange
             var creditCards = new CreditCardsVm
             {
                 Card = "35283589-8723-8888",
-                ExpiryDate = 081913
+                ExpiryDate = "081913"
             };
 
 
@@ -241,6 +239,30 @@ namespace App2c2cTest.Tests
             Assert.AreEqual("Does Not Exist", cardResponse.Result);
         }
 
+        [Test]
+        public async Task Post_Unknown_Invalid__Card()
+        {
+            // Arrange
+            var creditCards = new CreditCardsVm
+            {
+                Card = "3528-3589-8723-8888",
+                ExpiryDate = "0819139"
+            };
+
+
+            // Act
+            var result = await _creditCardController.GetCard(creditCards);
+
+            var value = result.Result as Microsoft.AspNetCore.Mvc.BadRequestObjectResult;
+            Assert.NotNull(value);
+            var cardResponse = value.Value as CardResponse;
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotNull(cardResponse);
+            Assert.AreEqual("Unknown", cardResponse.CardType);
+            Assert.AreEqual("Invalid", cardResponse.Result);
+        }
 
 
     }
