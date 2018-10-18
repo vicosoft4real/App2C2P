@@ -178,5 +178,34 @@ namespace App2c2pTest.Extensions
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="cardtype"></param>
+        /// <returns></returns>
+        public static CardResponse SetCard(this String card, string cardtype)
+        {
+             
+            return new CardResponse{CardType = cardtype};
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public static CardResponse SetResult(this CardResponse card, string result)
+        {
+
+              card.Result = result ;
+            return card;
+        }
+
+
+
+
     }
 }

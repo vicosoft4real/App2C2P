@@ -9,7 +9,7 @@ namespace App2c2pTest.Model
         public string Card { get; set; }
 
         [Required(ErrorMessage = "You must specify expiry date")]
-        //[RegularExpression("/^([0-9]{6})/g", ErrorMessage = "Invalid Expiry Date")]
-        public string ExpiryDate { get; set; }
+        [RegularExpression("/^([0-9]{6})/g", ErrorMessage = "Invalid Expiry Date")]
+        public int ExpiryDate { get; set; }
     }
 }

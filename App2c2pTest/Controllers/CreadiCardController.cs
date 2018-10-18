@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using App2c2pTest.Extensions;
 using App2c2pTest.Model;
@@ -30,7 +31,7 @@ namespace App2c2pTest.Controllers
         {
             if (ModelState.IsValid)
             {
-                var year = card.ExpiryDate.Substring(2, 4).ToNumber();
+                var year = card.ExpiryDate.ToString().Substring(2, 4).ToNumber();
                 
                 var sqlCardResult = await _cardRepository.GetCard(card.Card);
                
@@ -42,42 +43,48 @@ namespace App2c2pTest.Controllers
                     if (processingResult != null)
                     {
                        var  processingCard = processingResult.Card;
-                        if (processingCard.IsValidVisaCard())
-                        {
-                            var response = new CardResponse {CardType = "Visa"};
-                           
-                            return Ok(response.ValidateVisaYear(year));
-                        }
-                        if (processingCard.IsValidMasterCard())
-                        {
-                            var response = new CardResponse {CardType = "Master"};
-
-                            return Ok(response.ValidateIsMaterYearPrimeNumber(year));
-
-                        }
-                        if (processingCard.IsValidAmexCard())
-                        {
-                            var response = new CardResponse {CardType = "Amex"};
-                            
-
-                            return Ok(response.ValidateIsAmexCard15Digit(processingCard));
-                        }
-                        if (processingCard.IsValidJCBCard())
-                        {
-                            return Ok(new CardResponse {CardType = "JCB", Result = "Valid"});
-                        }
-                    }
+                        return Validate(processingCard,year);                    }
                 }
-                else
-                {
-                    return Ok(new CardResponse {CardType = "Unknown", Result = "Does Not Exist"});
-                }
+                
               
             }
-            return BadRequest(new CardResponse { CardType = "Unknown", Result = "Invalid" });
+            return BadRequest(card.Card.SetCard("Unknown").SetResult("Does Not Exist"));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processingCard"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        private ActionResult<CardResponse> Validate(string processingCard, int year)
+        {
+            if (processingCard.IsValidVisaCard())
+            {
+                var response = processingCard.SetCard("Visa");
+                return Ok(response.ValidateVisaYear(year));
+            }
+           else if (processingCard.IsValidMasterCard())
+            {
+
+                var response = processingCard.SetCard("Master");
+
+                return Ok(response.ValidateIsMaterYearPrimeNumber(year));
+
+            }
+           else if (processingCard.IsValidAmexCard())
+            {
+                var response = processingCard.SetCard("Amex");
 
 
+                return Ok(response.ValidateIsAmexCard15Digit(processingCard));
+            }
+            else if(processingCard.IsValidJCBCard())
+            {
+                return Ok(processingCard.SetCard("JCB").SetResult("Valid"));
+            }
+
+            return Ok(processingCard.SetCard("Unknown").SetResult("Invalid" ));
+        }
     }
 }
